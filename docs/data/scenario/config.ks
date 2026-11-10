@@ -266,10 +266,20 @@
 
 	[configdelay speed="&tf.set_ch_speed"]
 
-;	テキスト表示速度のサンプルに使用するメッセージレイヤの設定
-	[position layer="message1" left="90" top="580" width="1100" height="100" margint="2" marginl="30" page="fore" visible="true" opacity="0"]
-	[layopt layer="message1" visible="true"]
-	[current layer="message1"]
+
+; メッセージレイヤの設定（画面下に配置）
+[position layer="message0" page="fore" color="0x000000" opacity=200 left=180 top=480 width=920 height=200 marginl=30 margint=40 marginr=30 marginb=30]
+
+; 名前表示欄の追加（16進数カラーは文字列指定）
+[ptext layer="message0" name="chara_name_area" color="white" size=26 x=200 y=445 bold="true"]
+
+; キャラクター名表示欄として設定
+[chara_config ptext="chara_name_area"]
+
+; カレントレイヤーの設定と表示
+[current layer="message0"]
+[layopt layer="message0" visible=true]
+
 
 ;	サンプルテキストを表示する
 	[emb exp="tf.text_sample"]
